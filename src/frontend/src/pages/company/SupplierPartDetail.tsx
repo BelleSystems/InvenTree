@@ -87,7 +87,7 @@ export default function SupplierPartDetail() {
       {
         type: 'link',
         name: 'part',
-        label: t`Internal Part`,
+        label: t`Internal Item`,
         model: ModelType.part,
         hidden: !supplierPart.part
       },
@@ -102,7 +102,7 @@ export default function SupplierPartDetail() {
       {
         type: 'string',
         name: 'part_detail.description',
-        label: t`Part Description`,
+        label: t`Item Description`,
         copy: true,
         icon: 'info',
         hidden: !data.part_detail?.description
@@ -159,7 +159,7 @@ export default function SupplierPartDetail() {
         type: 'link',
         name: 'manufacturer_part',
         model_field: 'MPN',
-        label: t`Manufacturer Part`,
+        label: t`Manufacturer Item`,
         model: ModelType.manufacturerpart,
         icon: 'reference',
         hidden: !data.manufacturer_part
@@ -230,7 +230,7 @@ export default function SupplierPartDetail() {
             pk={supplierPart?.part_detail?.pk}
           />
           <Grid.Col span={8}>
-            <DetailsTable title={t`Part Details`} fields={tl} item={data} />
+            <DetailsTable title={t`Item Details`} fields={tl} item={data} />
           </Grid.Col>
         </Grid>
         <DetailsTable title={t`Supplier`} fields={bl} item={data} />
@@ -244,7 +244,7 @@ export default function SupplierPartDetail() {
     return [
       {
         name: 'details',
-        label: t`Supplier Part Details`,
+        label: t`Supplier Item Details`,
         icon: <IconInfoCircle />,
         content: detailsPanel
       },
@@ -310,7 +310,7 @@ export default function SupplierPartDetail() {
         perm={user.hasChangeRole(UserRoles.purchase_order)}
       />,
       <OptionsActionDropdown
-        tooltip={t`Supplier Part Actions`}
+        tooltip={t`Supplier Item Actions`}
         actions={[
           DuplicateItemAction({
             hidden: !user.hasAddRole(UserRoles.purchase_order),
@@ -334,7 +334,7 @@ export default function SupplierPartDetail() {
   const editSupplierPart = useEditApiFormModal({
     url: ApiEndpoints.supplier_part_list,
     pk: supplierPart?.pk,
-    title: t`Edit Supplier Part`,
+    title: t`Edit Supplier Item`,
     fields: supplierPartFields,
     onFormSuccess: refreshInstance
   });
@@ -342,7 +342,7 @@ export default function SupplierPartDetail() {
   const deleteSupplierPart = useDeleteApiFormModal({
     url: ApiEndpoints.supplier_part_list,
     pk: supplierPart?.pk,
-    title: t`Delete Supplier Part`,
+    title: t`Delete Supplier Item`,
     onFormSuccess: () => {
       navigate(getDetailUrl(ModelType.part, supplierPart.part));
     }
@@ -350,7 +350,7 @@ export default function SupplierPartDetail() {
 
   const duplicateSupplierPart = useCreateApiFormModal({
     url: ApiEndpoints.supplier_part_list,
-    title: t`Add Supplier Part`,
+    title: t`Add Supplier Item`,
     fields: supplierPartFields,
     initialData: {
       ...supplierPart
@@ -415,7 +415,7 @@ export default function SupplierPartDetail() {
       >
         <Stack gap='xs'>
           <PageDetail
-            title={t`Supplier Part`}
+            title={t`Supplier Item`}
             subtitle={`${supplierPart.SKU} - ${supplierPart?.part_detail?.name}`}
             breadcrumbs={breadcrumbs}
             lastCrumb={[

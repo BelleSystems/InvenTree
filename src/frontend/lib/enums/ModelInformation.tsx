@@ -26,8 +26,8 @@ export type ModelDict = {
 
 export const ModelInformationDict: ModelDict = {
   part: {
-    label: () => t`Part`,
-    label_multiple: () => t`Parts`,
+    label: () => t`Item`,
+    label_multiple: () => t`Items`,
     url_overview: '/part/category/index/parts',
     url_detail: '/part/:pk/',
     api_endpoint: ApiEndpoints.part_list,
@@ -49,15 +49,15 @@ export const ModelInformationDict: ModelDict = {
     icon: 'list'
   },
   parttesttemplate: {
-    label: () => t`Part Test Template`,
-    label_multiple: () => t`Part Test Templates`,
+    label: () => t`Item Test Template`,
+    label_multiple: () => t`Item Test Templates`,
     url_detail: '/parttesttemplate/:pk/',
     api_endpoint: ApiEndpoints.part_test_template_list,
     icon: 'test'
   },
   supplierpart: {
-    label: () => t`Supplier Part`,
-    label_multiple: () => t`Supplier Parts`,
+    label: () => t`Supplier Item`,
+    label_multiple: () => t`Supplier Items`,
     url_overview: '/purchasing/index/supplier-parts',
     url_detail: '/purchasing/supplier-part/:pk/',
     api_endpoint: ApiEndpoints.supplier_part_list,
@@ -66,8 +66,8 @@ export const ModelInformationDict: ModelDict = {
     icon: 'supplier_part'
   },
   manufacturerpart: {
-    label: () => t`Manufacturer Part`,
-    label_multiple: () => t`Manufacturer Parts`,
+    label: () => t`Manufacturer Item`,
+    label_multiple: () => t`Manufacturer Items`,
     url_overview: '/purchasing/index/manufacturer-parts',
     url_detail: '/purchasing/manufacturer-part/:pk/',
     api_endpoint: ApiEndpoints.manufacturer_part_list,
@@ -76,8 +76,8 @@ export const ModelInformationDict: ModelDict = {
     icon: 'manufacturers'
   },
   partcategory: {
-    label: () => t`Part Category`,
-    label_multiple: () => t`Part Categories`,
+    label: () => t`Item Category`,
+    label_multiple: () => t`Item Categories`,
     url_overview: '/part/category/parts/subcategories',
     url_detail: '/part/category/:pk/',
     api_endpoint: ApiEndpoints.category_list,

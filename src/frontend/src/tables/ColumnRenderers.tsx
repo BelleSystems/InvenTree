@@ -65,17 +65,17 @@ export function RenderPartColumn({
       />
       <Group justify='flex-end' wrap='nowrap' gap='xs'>
         {part?.active == false && (
-          <Tooltip label={t`Part is not active`}>
+          <Tooltip label={t`Item is not active`}>
             <IconExclamationCircle color='red' size={16} />
           </Tooltip>
         )}
         {part?.locked && (
-          <Tooltip label={t`Part is Locked`}>
+          <Tooltip label={t`Item is Locked`}>
             <IconLock size={16} />
           </Tooltip>
         )}
         {part?.starred && (
-          <Tooltip label={t`You are subscribed to notifications for this part`}>
+          <Tooltip label={t`You are subscribed to notifications for this item`}>
             <IconBell size={16} color='green' />
           </Tooltip>
         )}
@@ -88,7 +88,7 @@ export function RenderPartColumn({
 export function PartColumn(props: PartColumnProps): TableColumn {
   return {
     accessor: 'part',
-    title: t`Part`,
+    title: t`Item`,
     sortable: true,
     switchable: false,
     minWidth: '175px',

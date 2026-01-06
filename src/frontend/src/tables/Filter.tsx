@@ -262,7 +262,7 @@ export function IncludeVariantsFilter(): TableFilter {
     name: 'include_variants',
     type: 'boolean',
     label: t`Include Variants`,
-    description: t`Include results for part variants`
+    description: t`Include results for item variants`
   };
 }
 
@@ -386,8 +386,8 @@ export function IssuedByFilter(): TableFilter {
 export function PartCategoryFilter(): TableFilter {
   return {
     name: 'category',
-    label: t`Part Category`,
-    description: t`Filter by part category`,
+    label: t`Item Category`,
+    description: t`Filter by item category`,
     apiUrl: apiUrl(ApiEndpoints.category_list),
     model: ModelType.partcategory,
     modelRenderer: (instance: any) => instance.name

@@ -195,13 +195,13 @@ function partTableFilters(): TableFilter[] {
     {
       name: 'active',
       label: t`Active`,
-      description: t`Filter by part active status`,
+      description: t`Filter by item active status`,
       type: 'boolean'
     },
     {
       name: 'locked',
       label: t`Locked`,
-      description: t`Filter by part locked status`,
+      description: t`Filter by item locked status`,
       type: 'boolean'
     },
     {
@@ -213,13 +213,13 @@ function partTableFilters(): TableFilter[] {
     {
       name: 'bom_valid',
       label: t`BOM Valid`,
-      description: t`Filter by parts with a valid BOM`,
+      description: t`Filter by items with a valid BOM`,
       type: 'boolean'
     },
     {
       name: 'cascade',
       label: t`Include Subcategories`,
-      description: t`Include parts in subcategories`,
+      description: t`Include items in subcategories`,
       type: 'boolean'
     },
     {
@@ -243,43 +243,43 @@ function partTableFilters(): TableFilter[] {
     {
       name: 'has_units',
       label: t`Has Units`,
-      description: t`Filter by parts which have units`,
+      description: t`Filter by items which have units`,
       type: 'boolean'
     },
     {
       name: 'has_ipn',
       label: t`Has IPN`,
-      description: t`Filter by parts which have an internal part number`,
+      description: t`Filter by items which have an internal part number`,
       type: 'boolean'
     },
     {
       name: 'has_stock',
       label: t`Has Stock`,
-      description: t`Filter by parts which have stock`,
+      description: t`Filter by items which have stock`,
       type: 'boolean'
     },
     {
       name: 'low_stock',
       label: t`Low Stock`,
-      description: t`Filter by parts which have low stock`,
+      description: t`Filter by items which have low stock`,
       type: 'boolean'
     },
     {
       name: 'purchaseable',
       label: t`Purchaseable`,
-      description: t`Filter by parts which are purchaseable`,
+      description: t`Filter by items which are purchaseable`,
       type: 'boolean'
     },
     {
       name: 'salable',
       label: t`Salable`,
-      description: t`Filter by parts which are salable`,
+      description: t`Filter by items which are salable`,
       type: 'boolean'
     },
     {
       name: 'virtual',
       label: t`Virtual`,
-      description: t`Filter by parts which are virtual`,
+      description: t`Filter by items which are virtual`,
       type: 'choice',
       choices: [
         { value: 'true', label: t`Virtual` },
@@ -289,41 +289,41 @@ function partTableFilters(): TableFilter[] {
     {
       name: 'is_template',
       label: t`Is Template`,
-      description: t`Filter by parts which are templates`,
+      description: t`Filter by items which are templates`,
       type: 'boolean'
     },
     {
       name: 'is_variant',
       label: t`Is Variant`,
-      description: t`Filter by parts which are variants`,
+      description: t`Filter by items which are variants`,
       type: 'boolean'
     },
     {
       name: 'is_revision',
       label: t`Is Revision`,
-      description: t`Filter by parts which are revisions`
+      description: t`Filter by items which are revisions`
     },
     {
       name: 'has_revisions',
       label: t`Has Revisions`,
-      description: t`Filter by parts which have revisions`
+      description: t`Filter by items which have revisions`
     },
     {
       name: 'has_pricing',
       label: t`Has Pricing`,
-      description: t`Filter by parts which have pricing information`,
+      description: t`Filter by items which have pricing information`,
       type: 'boolean'
     },
     {
       name: 'unallocated_stock',
       label: t`Available Stock`,
-      description: t`Filter by parts which have available stock`,
+      description: t`Filter by items which have available stock`,
       type: 'boolean'
     },
     {
       name: 'starred',
       label: t`Subscribed`,
-      description: t`Filter by parts to which the user is subscribed`,
+      description: t`Filter by items to which the user is subscribed`,
       type: 'boolean'
     }
   ];
@@ -374,7 +374,7 @@ export function PartListTable({
 
   const importParts = useCreateApiFormModal({
     url: ApiEndpoints.import_session_list,
-    title: t`Import Parts`,
+    title: t`Import Items`,
     fields: importSessionFields,
     onFormSuccess: (response: any) => {
       setSelectedSession(response.pk);
@@ -393,7 +393,7 @@ export function PartListTable({
 
   const newPart = useCreateApiFormModal({
     url: ApiEndpoints.part_list,
-    title: t`Add Part`,
+    title: t`Add Item`,
     fields: newPartFields,
     initialData: initialPartData,
     follow: true,
@@ -405,7 +405,7 @@ export function PartListTable({
   const editPart = useEditApiFormModal({
     url: ApiEndpoints.part_list,
     pk: selectedPart.pk,
-    title: t`Edit Part`,
+    title: t`Edit Item`,
     fields: usePartFields({ create: false }),
     onFormSuccess: table.refreshTable
   });
@@ -446,7 +446,7 @@ export function PartListTable({
 
   const duplicatePart = useCreateApiFormModal({
     url: ApiEndpoints.part_list,
-    title: t`Add Part`,
+    title: t`Add Item`,
     fields: duplicatePartFields,
     initialData: {
       ...selectedPart,
@@ -503,7 +503,7 @@ export function PartListTable({
   const tableActions = useMemo(() => {
     return [
       <ActionDropdown
-        tooltip={t`Part Actions`}
+        tooltip={t`Item Actions`}
         icon={<InvenTreeIcon icon='part' />}
         disabled={!table.hasSelectedRecords}
         position='bottom-start'
@@ -511,7 +511,7 @@ export function PartListTable({
           {
             name: t`Set Category`,
             icon: <InvenTreeIcon icon='category' />,
-            tooltip: t`Set category for selected parts`,
+            tooltip: t`Set category for selected items`,
             hidden: !user.hasChangeRole(UserRoles.part),
             disabled: !table.hasSelectedRecords,
             onClick: () => {
@@ -519,9 +519,9 @@ export function PartListTable({
             }
           },
           {
-            name: t`Order Parts`,
+            name: t`Order Items`,
             icon: <IconShoppingCart color='blue' />,
-            tooltip: t`Order selected parts`,
+            tooltip: t`Order selected items`,
             hidden: !user.hasAddRole(UserRoles.purchase_order),
             onClick: () => {
               orderPartsWizard.openWizard();
@@ -531,28 +531,28 @@ export function PartListTable({
       />,
       <ActionDropdown
         key='add-parts-actions'
-        tooltip={t`Add Parts`}
+        tooltip={t`Add Items`}
         position='bottom-start'
         icon={<IconPlus />}
         hidden={!user.hasAddRole(UserRoles.part)}
         actions={[
           {
-            name: t`Create Part`,
+            name: t`Create Item`,
             icon: <IconPlus />,
-            tooltip: t`Create a new part`,
+            tooltip: t`Create a new item`,
             onClick: () => newPart.open()
           },
           {
             name: t`Import from File`,
             icon: <IconFileUpload />,
-            tooltip: t`Import parts from a file`,
+            tooltip: t`Import items from a file`,
             onClick: () => importParts.open(),
             hidden: !enableImport
           },
           {
             name: t`Import from Supplier`,
             icon: <IconPackageImport />,
-            tooltip: t`Import parts from a supplier plugin`,
+            tooltip: t`Import items from a supplier plugin`,
             hidden: !enableImport || supplierPlugins.length === 0,
             onClick: () => importPartWizard.openWizard()
           }

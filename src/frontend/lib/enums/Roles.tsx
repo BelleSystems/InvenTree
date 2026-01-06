@@ -32,9 +32,9 @@ export function userRoleLabel(role: UserRoles): string {
     case UserRoles.build:
       return t`Build Orders`;
     case UserRoles.part:
-      return t`Parts`;
+      return t`Items`;
     case UserRoles.part_category:
-      return t`Part Categories`;
+      return t`Item Categories`;
     case UserRoles.purchase_order:
       return t`Purchase Orders`;
     case UserRoles.return_order:

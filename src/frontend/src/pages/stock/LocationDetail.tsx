@@ -191,7 +191,7 @@ export default function Stock() {
       },
       {
         name: 'default_parts',
-        label: t`Default Parts`,
+        label: t`Default Items`,
         icon: <IconPackages />,
         hidden: !location.pk,
         content: (

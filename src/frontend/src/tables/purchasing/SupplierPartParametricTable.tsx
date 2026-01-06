@@ -26,7 +26,7 @@ export default function SupplierPartParametricTable({
       },
       {
         accessor: 'SKU',
-        title: t`Supplier Part`,
+        title: t`Supplier Item`,
         sortable: true
       }
     ];

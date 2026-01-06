@@ -74,7 +74,7 @@ export default function ManufacturerPartDetail() {
       {
         type: 'link',
         name: 'part',
-        label: t`Internal Part`,
+        label: t`Internal Item`,
         model: ModelType.part,
         hidden: !manufacturerPart.part
       },
@@ -108,7 +108,7 @@ export default function ManufacturerPartDetail() {
       {
         type: 'string',
         name: 'MPN',
-        label: t`Manufacturer Part Number`,
+        label: t`Manufacturer Item Number`,
         copy: true,
         hidden: !manufacturerPart.MPN,
         icon: 'reference'
@@ -144,7 +144,7 @@ export default function ManufacturerPartDetail() {
             pk={manufacturerPart?.part_detail?.pk}
           />
           <Grid.Col span={{ base: 12, sm: 8 }}>
-            <DetailsTable title={t`Part Details`} fields={tl} item={data} />
+            <DetailsTable title={t`Item Details`} fields={tl} item={data} />
           </Grid.Col>
         </Grid>
         <DetailsTable title={t`Manufacturer Details`} fields={tr} item={data} />
@@ -156,7 +156,7 @@ export default function ManufacturerPartDetail() {
     return [
       {
         name: 'details',
-        label: t`Manufacturer Part Details`,
+        label: t`Manufacturer Item Details`,
         icon: <IconInfoCircle />,
         content: detailsPanel
       },
@@ -208,14 +208,14 @@ export default function ManufacturerPartDetail() {
   const editManufacturerPart = useEditApiFormModal({
     url: ApiEndpoints.manufacturer_part_list,
     pk: manufacturerPart?.pk,
-    title: t`Edit Manufacturer Part`,
+    title: t`Edit Manufacturer Item`,
     fields: editManufacturerPartFields,
     onFormSuccess: refreshInstance
   });
 
   const duplicateManufacturerPart = useCreateApiFormModal({
     url: ApiEndpoints.manufacturer_part_list,
-    title: t`Add Manufacturer Part`,
+    title: t`Add Manufacturer Item`,
     fields: editManufacturerPartFields,
     initialData: {
       ...manufacturerPart
@@ -227,7 +227,7 @@ export default function ManufacturerPartDetail() {
   const deleteManufacturerPart = useDeleteApiFormModal({
     url: ApiEndpoints.manufacturer_part_list,
     pk: manufacturerPart?.pk,
-    title: t`Delete Manufacturer Part`,
+    title: t`Delete Manufacturer Item`,
     onFormSuccess: () => {
       navigate(getDetailUrl(ModelType.part, manufacturerPart.part));
     }
@@ -242,7 +242,7 @@ export default function ManufacturerPartDetail() {
       />,
       <OptionsActionDropdown
         key='options'
-        tooltip={t`Manufacturer Part Actions`}
+        tooltip={t`Manufacturer Item Actions`}
         actions={[
           DuplicateItemAction({
             hidden: !user.hasAddRole(UserRoles.purchase_order),
@@ -285,7 +285,7 @@ export default function ManufacturerPartDetail() {
       >
         <Stack gap='xs'>
           <PageDetail
-            title={t`Manufacturer Part`}
+            title={t`Manufacturer Item`}
             subtitle={`${manufacturerPart.MPN} - ${manufacturerPart.part_detail?.name}`}
             breadcrumbs={breadcrumbs}
             lastCrumb={[

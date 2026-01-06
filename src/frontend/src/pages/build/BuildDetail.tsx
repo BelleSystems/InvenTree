@@ -70,7 +70,7 @@ function NoItems() {
     <Alert color='blue' icon={<IconInfoCircle />} title={t`No Required Items`}>
       <Stack gap='xs'>
         <Text>{t`This build order does not have any required items.`}</Text>
-        <Text>{t`The assembled part may not have a Bill of Materials (BOM) defined, or the BOM is empty.`}</Text>
+        <Text>{t`The assembled item may not have a Bill of Materials (BOM) defined, or the BOM is empty.`}</Text>
       </Stack>
     </Alert>
   );
@@ -198,7 +198,7 @@ export default function BuildDetail() {
       {
         type: 'link',
         name: 'part',
-        label: t`Part`,
+        label: t`Item`,
         model: ModelType.part
       },
       {
@@ -414,7 +414,7 @@ export default function BuildDetail() {
       },
       {
         name: 'line-items',
-        label: t`Required Parts`,
+        label: t`Required Items`,
         icon: <IconListNumbers />,
         content: (
           <BuildLinesPanel

@@ -138,7 +138,7 @@ export default function SalesOrderLineItemTable({
         title: t`Available Stock`,
         render: (record: any) => {
           if (record.part_detail?.virtual) {
-            return <Text size='sm' fs='italic'>{t`Virtual part`}</Text>;
+            return <Text size='sm' fs='italic'>{t`Virtual item`}</Text>;
           }
 
           const part_stock = record?.available_stock ?? 0;
@@ -196,7 +196,7 @@ export default function SalesOrderLineItemTable({
         sortable: true,
         render: (record: any) => {
           if (record.part_detail?.virtual) {
-            return <Text size='sm' fs='italic'>{t`Virtual part`}</Text>;
+            return <Text size='sm' fs='italic'>{t`Virtual item`}</Text>;
           }
 
           return (
@@ -213,7 +213,7 @@ export default function SalesOrderLineItemTable({
         sortable: true,
         render: (record: any) => {
           if (record.part_detail?.virtual) {
-            return <Text size='sm' fs='italic'>{t`Virtual part`}</Text>;
+            return <Text size='sm' fs='italic'>{t`Virtual item`}</Text>;
           }
 
           return (
@@ -367,7 +367,7 @@ export default function SalesOrderLineItemTable({
         key='order-parts'
         hidden={!user.hasAddRole(UserRoles.purchase_order)}
         disabled={!table.hasSelectedRecords}
-        tooltip={t`Order Parts`}
+        tooltip={t`Order Items`}
         icon={<IconShoppingCart />}
         color='blue'
         onClick={() => {
@@ -484,7 +484,7 @@ export default function SalesOrderLineItemTable({
           }
         }),
         RowViewAction({
-          title: t`View Part`,
+          title: t`View Item`,
           modelType: ModelType.part,
           modelId: record.part,
           navigate: navigate,

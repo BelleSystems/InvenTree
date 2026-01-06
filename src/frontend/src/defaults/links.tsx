@@ -33,7 +33,7 @@ export function getNavTabs(user: UserStateProps): NavTab[] {
     },
     {
       name: 'part',
-      title: t`Parts`,
+      title: t`Items`,
       icon: <IconBox />,
       role: UserRoles.part
     },

@@ -185,14 +185,14 @@ export default function CompanyDetail(props: Readonly<CompanyDetailProps>) {
       },
       {
         name: 'supplied-parts',
-        label: t`Supplied Parts`,
+        label: t`Supplied Items`,
         icon: <IconPackageExport />,
         hidden: !company?.is_supplier,
         content: company?.pk && <SupplierPartTable supplierId={company.pk} />
       },
       {
         name: 'manufactured-parts',
-        label: t`Manufactured Parts`,
+        label: t`Manufactured Items`,
         icon: <IconBuildingWarehouse />,
         hidden: !company?.is_manufacturer,
         content: company?.pk && (

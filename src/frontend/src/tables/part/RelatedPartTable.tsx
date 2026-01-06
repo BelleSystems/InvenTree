@@ -50,7 +50,7 @@ export function RelatedPartTable({
     return [
       {
         accessor: 'part',
-        title: t`Part`,
+        title: t`Item`,
         switchable: false,
         render: (record: any) => {
           const part = getPart(record);
@@ -79,7 +79,7 @@ export function RelatedPartTable({
       },
       {
         accessor: 'description',
-        title: t`Part Description`,
+        title: t`Item Description`,
         ellipsis: true,
         render: (record: any) => {
           return getPart(record).description;
@@ -101,7 +101,7 @@ export function RelatedPartTable({
 
   const newRelatedPart = useCreateApiFormModal({
     url: ApiEndpoints.related_part_list,
-    title: t`Add Related Part`,
+    title: t`Add Related Item`,
     fields: relatedPartFields,
     initialData: {
       part_1: partId
@@ -116,14 +116,14 @@ export function RelatedPartTable({
   const deleteRelatedPart = useDeleteApiFormModal({
     url: ApiEndpoints.related_part_list,
     pk: selectedRelatedPart,
-    title: t`Delete Related Part`,
+    title: t`Delete Related Item`,
     table: table
   });
 
   const editRelatedPart = useEditApiFormModal({
     url: ApiEndpoints.related_part_list,
     pk: selectedRelatedPart,
-    title: t`Edit Related Part`,
+    title: t`Edit Related Item`,
     fields: {
       note: {}
     },
@@ -134,7 +134,7 @@ export function RelatedPartTable({
     return [
       <AddItemButton
         key='add-related-part'
-        tooltip={t`Add Related Part`}
+        tooltip={t`Add Related Item`}
         hidden={!user.hasAddRole(UserRoles.part)}
         onClick={() => newRelatedPart.open()}
       />

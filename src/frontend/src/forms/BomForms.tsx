@@ -106,7 +106,7 @@ export function useEditBomSubstitutesForm(props: BomItemSubstituteFormProps) {
           ) : null;
         },
         headers: [
-          { title: t`Substitute Part`, style: { width: '100%' } },
+          { title: t`Substitute Item`, style: { width: '100%' } },
           { title: '', style: { width: '50px' } }
         ]
       },

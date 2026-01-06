@@ -203,17 +203,17 @@ function BomValidationInformation({
     color = 'green';
     icon = <IconListCheck />;
     title = t`BOM Validated`;
-    description = t`The Bill of Materials for this part has been validated`;
+    description = t`The Bill of Materials for this item has been validated`;
   } else if (bomInformation?.bom_checked_date) {
     color = 'yellow';
     icon = <IconExclamationCircle />;
     title = t`BOM Not Validated`;
-    description = t`The Bill of Materials for this part has previously been checked, but requires revalidation`;
+    description = t`The Bill of Materials for this item has previously been checked, but requires revalidation`;
   } else {
     color = 'red';
     icon = <IconExclamationCircle />;
     title = t`BOM Not Validated`;
-    description = t`The Bill of Materials for this part has not yet been validated`;
+    description = t`The Bill of Materials for this item has not yet been validated`;
   }
 
   return (
@@ -623,44 +623,44 @@ export default function PartDetail() {
         type: 'boolean',
         icon: 'template',
         name: 'is_template',
-        label: t`Template Part`
+        label: t`Template Item`
       },
       {
         type: 'boolean',
         name: 'assembly',
-        label: t`Assembled Part`
+        label: t`Assembled Item`
       },
       {
         type: 'boolean',
         name: 'component',
-        label: t`Component Part`
+        label: t`Component Item`
       },
       {
         type: 'boolean',
         name: 'testable',
-        label: t`Testable Part`,
+        label: t`Testable Item`,
         icon: 'test'
       },
       {
         type: 'boolean',
         name: 'trackable',
-        label: t`Trackable Part`
+        label: t`Trackable Item`
       },
       {
         type: 'boolean',
         name: 'purchaseable',
-        label: t`Purchaseable Part`
+        label: t`Purchaseable Item`
       },
       {
         type: 'boolean',
         name: 'salable',
         icon: 'saleable',
-        label: t`Saleable Part`
+        label: t`Saleable Item`
       },
       {
         type: 'boolean',
         name: 'virtual',
-        label: t`Virtual Part`
+        label: t`Virtual Item`
       },
       {
         type: 'boolean',
@@ -754,7 +754,7 @@ export default function PartDetail() {
           </Grid>
           {enableRevisionSelection && (
             <Stack gap='xs'>
-              <Text>{t`Select Part Revision`}</Text>
+              <Text>{t`Select Item Revision`}</Text>
               <RevisionSelector part={part} options={partRevisionOptions} />
             </Stack>
           )}
@@ -784,7 +784,7 @@ export default function PartDetail() {
     return [
       {
         name: 'details',
-        label: t`Part Details`,
+        label: t`Item Details`,
         icon: <IconInfoCircle />,
         content: detailsPanel
       },
@@ -842,7 +842,7 @@ export default function PartDetail() {
       },
       {
         name: 'pricing',
-        label: t`Part Pricing`,
+        label: t`Item Pricing`,
         icon: <IconCurrencyDollar />,
         content: part ? <PartPricingPanel part={part} /> : <Skeleton />
       },
@@ -934,7 +934,7 @@ export default function PartDetail() {
       },
       {
         name: 'related_parts',
-        label: t`Related Parts`,
+        label: t`Related Items`,
         icon: <IconLayersLinked />,
         content: <RelatedPartTable partId={part.pk} />
       },
@@ -946,12 +946,12 @@ export default function PartDetail() {
           <>
             {part.locked && (
               <Alert
-                title={t`Part is Locked`}
+                title={t`Item is Locked`}
                 color='orange'
                 icon={<IconLock />}
                 p='xs'
               >
-                <Text>{t`Part parameters cannot be edited, as the part is locked`}</Text>
+                <Text>{t`Item parameters cannot be edited, as the item is locked`}</Text>
               </Alert>
             )}
             <ParameterTable
@@ -975,7 +975,7 @@ export default function PartDetail() {
 
   const breadcrumbs = useMemo(() => {
     return [
-      { name: t`Parts`, url: '/part' },
+      { name: t`Items`, url: '/part' },
       ...(part.category_path ?? []).map((c: any) => ({
         name: c.name,
         url: getDetailUrl(ModelType.partcategory, c.pk)
@@ -1051,7 +1051,7 @@ export default function PartDetail() {
         key='inactive'
       />,
       <DetailsBadge
-        label={t`Virtual Part`}
+        label={t`Virtual Item`}
         color='cyan.4'
         visible={part.virtual}
         key='virtual'
@@ -1064,7 +1064,7 @@ export default function PartDetail() {
   const editPart = useEditApiFormModal({
     url: ApiEndpoints.part_list,
     pk: part.pk,
-    title: t`Edit Part`,
+    title: t`Edit Item`,
     fields: partFields,
     onFormSuccess: refreshInstance
   });
@@ -1076,7 +1076,7 @@ export default function PartDetail() {
 
   const duplicatePart = useCreateApiFormModal({
     url: ApiEndpoints.part_list,
-    title: t`Add Part`,
+    title: t`Add Item`,
     fields: duplicatePartFields,
     initialData: {
       ...part,
@@ -1090,7 +1090,7 @@ export default function PartDetail() {
   const deletePart = useDeleteApiFormModal({
     url: ApiEndpoints.part_list,
     pk: part.pk,
-    title: t`Delete Part`,
+    title: t`Delete Item`,
     onFormSuccess: () => {
       if (part.category) {
         navigate(getDetailUrl(ModelType.partcategory, part.category));
@@ -1099,7 +1099,7 @@ export default function PartDetail() {
       }
     },
     preFormContent: (
-      <Alert color='red' title={t`Deleting this part cannot be reversed`}>
+      <Alert color='red' title={t`Deleting this item cannot be reversed`}>
         <Stack gap='xs'>
           <Thumbnail src={part.thumbnail ?? part.image} text={part.full_name} />
         </Stack>
@@ -1182,7 +1182,7 @@ export default function PartDetail() {
         ]}
       />,
       <OptionsActionDropdown
-        tooltip={t`Part Actions`}
+        tooltip={t`Item Actions`}
         actions={[
           DuplicateItemAction({
             hidden: !user.hasAddRole(UserRoles.part),
@@ -1214,7 +1214,7 @@ export default function PartDetail() {
         <Stack gap='xs'>
           {user.hasViewRole(UserRoles.part_category) && (
             <NavigationTree
-              title={t`Part Categories`}
+              title={t`Item Categories`}
               modelType={ModelType.partcategory}
               endpoint={ApiEndpoints.category_tree}
               opened={treeOpen}
@@ -1225,7 +1225,7 @@ export default function PartDetail() {
             />
           )}
           <PageDetail
-            title={`${t`Part`}: ${part.full_name}`}
+            title={`${t`Item`}: ${part.full_name}`}
             icon={
               part?.locked ? (
                 <IconLock aria-label='part-lock-icon' />

@@ -125,7 +125,7 @@ export default function PurchasingIndex() {
       }),
       SegmentedControlPanel({
         name: 'supplier-parts',
-        label: t`Supplier Parts`,
+        label: t`Supplier Items`,
         icon: <IconPackageExport />,
         selection: supplierPartsView,
         onChange: setSupplierPartsView,
@@ -174,7 +174,7 @@ export default function PurchasingIndex() {
       }),
       SegmentedControlPanel({
         name: 'manufacturer-parts',
-        label: t`Manufacturer Parts`,
+        label: t`Manufacturer Items`,
         icon: <IconBuildingWarehouse />,
         selection: manufacturerPartsView,
         onChange: setManufacturerPartsView,

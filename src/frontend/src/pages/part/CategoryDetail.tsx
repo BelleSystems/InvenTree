@@ -132,7 +132,7 @@ export default function CategoryDetail() {
       {
         type: 'text',
         name: 'part_count',
-        label: t`Parts`,
+        label: t`Items`,
         icon: 'part',
         value_formatter: () => category?.part_count || '0'
       },
@@ -170,7 +170,7 @@ export default function CategoryDetail() {
         {id && category?.pk ? (
           <DetailsTable item={category} fields={left} />
         ) : (
-          <Text>{t`Top level part category`}</Text>
+          <Text>{t`Top level item category`}</Text>
         )}
         {id && category?.pk && <DetailsTable item={category} fields={right} />}
       </ItemDetailsGrid>
@@ -180,7 +180,7 @@ export default function CategoryDetail() {
   const editCategory = useEditApiFormModal({
     url: ApiEndpoints.category_list,
     pk: id,
-    title: t`Edit Part Category`,
+    title: t`Edit Item Category`,
     fields: partCategoryFields({}),
     onFormSuccess: refreshInstance
   });
@@ -201,11 +201,11 @@ export default function CategoryDetail() {
   const deleteCategory = useDeleteApiFormModal({
     url: ApiEndpoints.category_list,
     pk: id,
-    title: t`Delete Part Category`,
+    title: t`Delete Item Category`,
     fields: {
       delete_parts: {
-        label: t`Parts Action`,
-        description: t`Action for parts in this category`,
+        label: t`Items Action`,
+        description: t`Action for items in this category`,
         choices: deleteOptions,
         required: true,
         field_type: 'choice'
@@ -248,12 +248,12 @@ export default function CategoryDetail() {
         actions={[
           EditItemAction({
             hidden: !id || !user.hasChangeRole(UserRoles.part_category),
-            tooltip: t`Edit Part Category`,
+            tooltip: t`Edit Item Category`,
             onClick: () => editCategory.open()
           }),
           DeleteItemAction({
             hidden: !id || !user.hasDeleteRole(UserRoles.part_category),
-            tooltip: t`Delete Part Category`,
+            tooltip: t`Delete Item Category`,
             onClick: () => deleteCategory.open()
           })
         ]}
@@ -276,13 +276,13 @@ export default function CategoryDetail() {
       },
       {
         name: 'subcategories',
-        label: id ? t`Subcategories` : t`Part Categories`,
+        label: id ? t`Subcategories` : t`Item Categories`,
         icon: <IconSitemap />,
         content: <PartCategoryTable parentId={id} />
       },
       SegmentedControlPanel({
         name: 'parts',
-        label: t`Parts`,
+        label: t`Items`,
         icon: <IconCategory />,
         selection: partsView,
         onChange: setPartsView,
@@ -337,7 +337,7 @@ export default function CategoryDetail() {
 
   const breadcrumbs = useMemo(
     () => [
-      { name: t`Parts`, url: '/part' },
+      { name: t`Items`, url: '/part' },
       ...(category.path ?? []).map((c: any) => ({
         name: c.name,
         url: getDetailUrl(ModelType.partcategory, c.pk),
@@ -359,7 +359,7 @@ export default function CategoryDetail() {
           <LoadingOverlay visible={instanceQuery.isFetching} />
           <NavigationTree
             modelType={ModelType.partcategory}
-            title={t`Part Categories`}
+            title={t`Item Categories`}
             endpoint={ApiEndpoints.category_tree}
             opened={treeOpen}
             onClose={() => {
@@ -368,7 +368,7 @@ export default function CategoryDetail() {
             selectedId={category?.pk}
           />
           <PageDetail
-            title={(category?.name ?? id) ? t`Part Category` : t`Parts`}
+            title={(category?.name ?? id) ? t`Item Category` : t`Items`}
             subtitle={category?.description}
             icon={category?.icon && <ApiIcon name={category?.icon} />}
             breadcrumbs={breadcrumbs}

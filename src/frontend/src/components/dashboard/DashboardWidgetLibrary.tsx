@@ -21,15 +21,15 @@ export function BuiltinQueryCountWidgets(): DashboardWidgetProps[] {
   const widgets: DashboardWidgetProps[] = [
     QueryCountDashboardWidget({
       label: 'sub-prt',
-      title: t`Subscribed Parts`,
-      description: t`Show the number of parts which you have subscribed to`,
+      title: t`Subscribed Items`,
+      description: t`Show the number of items which you have subscribed to`,
       modelType: ModelType.part,
       params: { starred: true, active: true }
     }),
     QueryCountDashboardWidget({
       label: 'sub-cat',
       title: t`Subscribed Categories`,
-      description: t`Show the number of part categories which you have subscribed to`,
+      description: t`Show the number of item categories which you have subscribed to`,
       modelType: ModelType.partcategory,
       params: {
         starred: true,
@@ -52,7 +52,7 @@ export function BuiltinQueryCountWidgets(): DashboardWidgetProps[] {
     QueryCountDashboardWidget({
       title: t`Low Stock`,
       label: 'low-stk',
-      description: t`Show the number of parts which are low on stock`,
+      description: t`Show the number of items which are low on stock`,
       modelType: ModelType.part,
       params: {
         active: true,
@@ -63,7 +63,7 @@ export function BuiltinQueryCountWidgets(): DashboardWidgetProps[] {
     QueryCountDashboardWidget({
       title: t`Required for Build Orders`,
       label: 'bld-req',
-      description: t`Show parts which are required for active build orders`,
+      description: t`Show items which are required for active build orders`,
       modelType: ModelType.part,
       params: { stock_to_build: true }
     }),

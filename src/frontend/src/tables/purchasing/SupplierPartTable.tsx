@@ -80,7 +80,7 @@ export function SupplierPartTable({
       },
       {
         accessor: 'SKU',
-        title: t`Supplier Part`,
+        title: t`Supplier Item`,
         sortable: true
       },
       DescriptionColumn({}),
@@ -169,7 +169,7 @@ export function SupplierPartTable({
 
   const addSupplierPart = useCreateApiFormModal({
     url: ApiEndpoints.supplier_part_list,
-    title: t`Add Supplier Part`,
+    title: t`Add Supplier Item`,
     fields: supplierPartFields,
     initialData: {
       part: partId,
@@ -177,7 +177,7 @@ export function SupplierPartTable({
       manufacturer_part: manufacturerPartId
     },
     table: table,
-    successMessage: t`Supplier part created`
+    successMessage: t`Supplier item created`
   });
 
   const supplierPlugins = usePluginsWithMixin('supplier');
@@ -189,7 +189,7 @@ export function SupplierPartTable({
     return [
       <AddItemButton
         key='add-supplier-part'
-        tooltip={t`Add supplier part`}
+        tooltip={t`Add supplier item`}
         onClick={() => addSupplierPart.open()}
         hidden={!user.hasAddRole(UserRoles.purchase_order)}
       />,
@@ -197,7 +197,7 @@ export function SupplierPartTable({
         key='import-part'
         icon={<IconPackageImport />}
         color='green'
-        tooltip={t`Import supplier part`}
+        tooltip={t`Import supplier item`}
         onClick={() => importPartWizard.openWizard()}
         hidden={
           supplierPlugins.length === 0 ||
@@ -213,12 +213,12 @@ export function SupplierPartTable({
       {
         name: 'active',
         label: t`Active`,
-        description: t`Show active supplier parts`
+        description: t`Show active supplier items`
       },
       {
         name: 'part_active',
-        label: t`Active Part`,
-        description: t`Show active internal parts`
+        label: t`Active Item`,
+        description: t`Show active internal items`
       },
       {
         name: 'supplier_active',
@@ -228,7 +228,7 @@ export function SupplierPartTable({
       {
         name: 'has_stock',
         label: t`In Stock`,
-        description: t`Show supplier parts with stock`
+        description: t`Show supplier items with stock`
       }
     ];
   }, []);
@@ -241,27 +241,27 @@ export function SupplierPartTable({
   const editSupplierPart = useEditApiFormModal({
     url: ApiEndpoints.supplier_part_list,
     pk: selectedSupplierPart?.pk,
-    title: t`Edit Supplier Part`,
+    title: t`Edit Supplier Item`,
     fields: useMemo(() => editSupplierPartFields, [editSupplierPartFields]),
     table: table
   });
 
   const duplicateSupplierPart = useCreateApiFormModal({
     url: ApiEndpoints.supplier_part_list,
-    title: t`Add Supplier Part`,
+    title: t`Add Supplier Item`,
     fields: useMemo(() => editSupplierPartFields, [editSupplierPartFields]),
     initialData: {
       ...selectedSupplierPart,
       active: true
     },
     table: table,
-    successMessage: t`Supplier part created`
+    successMessage: t`Supplier item created`
   });
 
   const deleteSupplierPart = useDeleteApiFormModal({
     url: ApiEndpoints.supplier_part_list,
     pk: selectedSupplierPart?.pk,
-    title: t`Delete Supplier Part`,
+    title: t`Delete Supplier Item`,
     table: table
   });
 

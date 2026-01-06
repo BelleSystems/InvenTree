@@ -788,7 +788,7 @@ export default function BuildLineTable({
           }
         },
         RowViewAction({
-          title: t`View Part`,
+          title: t`View Item`,
           modelType: ModelType.part,
           modelId: record.part,
           navigate: navigate
@@ -819,7 +819,7 @@ export default function BuildLineTable({
         disabled={!table.hasSelectedRecords}
         icon={<IconShoppingCart />}
         color='blue'
-        tooltip={t`Order Parts`}
+        tooltip={t`Order Items`}
         onClick={() => {
           setPartsToOrder(
             table.selectedRecords

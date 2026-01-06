@@ -53,7 +53,7 @@ export default function PartTestTemplateTable({
 
           if (record.part != partId) {
             extra.push(
-              <Text size='sm'>{t`Test is defined for a parent template part`}</Text>
+              <Text size='sm'>{t`Test is defined for a parent template item`}</Text>
             );
           }
 
@@ -206,7 +206,7 @@ export default function PartTestTemplateTable({
         // This test is defined for a parent part
         return [
           RowViewAction({
-            title: t`View Parent Part`,
+            title: t`View Parent Item`,
             modelType: ModelType.part,
             modelId: record.part,
             navigate: navigate
@@ -255,12 +255,12 @@ export default function PartTestTemplateTable({
       <Stack gap='xs'>
         {partLocked && (
           <Alert
-            title={t`Part is Locked`}
+            title={t`Item is Locked`}
             color='orange'
             icon={<IconLock />}
             p='xs'
           >
-            <Text>{t`Part templates cannot be edited, as the part is locked`}</Text>
+            <Text>{t`Item templates cannot be edited, as the item is locked`}</Text>
           </Alert>
         )}
         <InvenTreeTable

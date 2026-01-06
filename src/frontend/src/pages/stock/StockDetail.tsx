@@ -144,7 +144,7 @@ export default function StockDetail() {
     const tl: DetailsField[] = [
       {
         name: 'part',
-        label: t`Base Part`,
+        label: t`Base Item`,
         type: 'link',
         model: ModelType.part
       },
@@ -286,7 +286,7 @@ export default function StockDetail() {
     const bl: DetailsField[] = [
       {
         name: 'supplier_part',
-        label: t`Supplier Part`,
+        label: t`Supplier Item`,
         type: 'link',
         model_field: 'SKU',
         model: ModelType.supplierpart,

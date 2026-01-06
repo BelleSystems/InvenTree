@@ -41,14 +41,14 @@ export default function ManufacturerPartParametricTable({
     return [
       {
         name: 'part_active',
-        label: t`Active Part`,
-        description: t`Show manufacturer parts for active internal parts.`,
+        label: t`Active Item`,
+        description: t`Show manufacturer items for active internal items.`,
         type: 'boolean'
       },
       {
         name: 'manufacturer_active',
         label: t`Active Manufacturer`,
-        description: t`Show manufacturer parts for active manufacturers.`,
+        description: t`Show manufacturer items for active manufacturers.`,
         type: 'boolean'
       }
     ];

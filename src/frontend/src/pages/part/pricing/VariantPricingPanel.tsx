@@ -26,7 +26,7 @@ export default function VariantPricingPanel({
   const columns: TableColumn[] = useMemo(() => {
     return [
       PartColumn({
-        title: t`Variant Part`,
+        title: t`Variant Item`,
         part: '',
         full_name: true
       }),
@@ -91,7 +91,7 @@ export default function VariantPricingPanel({
           <BarChart
             dataKey='name'
             data={variantPricingData}
-            xAxisLabel={t`Variant Part`}
+            xAxisLabel={t`Variant Item`}
             yAxisLabel={t`Price Range`}
             series={[
               { name: 'pmin', label: t`Minimum Price`, color: 'blue.6' },

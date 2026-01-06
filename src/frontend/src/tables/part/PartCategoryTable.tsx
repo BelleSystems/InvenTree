@@ -101,7 +101,7 @@ export function PartCategoryTable({ parentId }: Readonly<{ parentId?: any }>) {
 
   const newCategory = useCreateApiFormModal({
     url: ApiEndpoints.category_list,
-    title: t`New Part Category`,
+    title: t`New Item Category`,
     fields: newCategoryFields,
     focus: 'name',
     initialData: {
@@ -119,7 +119,7 @@ export function PartCategoryTable({ parentId }: Readonly<{ parentId?: any }>) {
   const editCategory = useEditApiFormModal({
     url: ApiEndpoints.category_list,
     pk: selectedCategory,
-    title: t`Edit Part Category`,
+    title: t`Edit Item Category`,
     fields: editCategoryFields,
     onFormSuccess: (record: any) => table.updateRecord(record)
   });
@@ -158,7 +158,7 @@ export function PartCategoryTable({ parentId }: Readonly<{ parentId?: any }>) {
       />,
       <AddItemButton
         key='add-part-category'
-        tooltip={t`Add Part Category`}
+        tooltip={t`Add Item Category`}
         onClick={() => newCategory.open()}
         hidden={!can_add}
       />
