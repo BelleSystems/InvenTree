@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: inventree\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2026-01-15 22:34+0000\n"
-"PO-Revision-Date: 2026-01-15 22:38\n"
+"POT-Creation-Date: 2026-01-17 23:47+0000\n"
+"PO-Revision-Date: 2026-01-20 04:38\n"
 "Last-Translator: \n"
 "Language-Team: Portuguese, Brazilian\n"
 "Language: pt_BR\n"
@@ -55,7 +55,7 @@ msgstr "Nenhum dado fornecido"
 
 #: InvenTree/api.py:517
 msgid "This field must be unique."
-msgstr ""
+msgstr "Este campo deve ser único."
 
 #: InvenTree/api.py:812
 msgid "User does not have permission to view this model"
@@ -351,7 +351,7 @@ msgstr "Selecione a moeda entre as opções disponíveis"
 
 #: InvenTree/serializers.py:726
 msgid "This field may not be null."
-msgstr ""
+msgstr "Este campo não pode ser nulo."
 
 #: InvenTree/serializers.py:732
 msgid "Invalid value"
@@ -375,11 +375,11 @@ msgstr "Falha ao baixar a imagem da URL remota"
 
 #: InvenTree/serializers.py:878
 msgid "Invalid content type format"
-msgstr ""
+msgstr "Formato de conteúdo inválido"
 
 #: InvenTree/serializers.py:881
 msgid "Content type not found"
-msgstr ""
+msgstr "Tipo de conteúdo não encontrado"
 
 #: InvenTree/serializers.py:887
 msgid "Content type does not match required mixin class"
@@ -737,7 +737,7 @@ msgstr "Local"
 
 #: build/api.py:885
 msgid "Output"
-msgstr ""
+msgstr "Saída"
 
 #: build/api.py:887
 msgid "Filter by output stock item ID. Use 'null' to find uninstalled build items."
@@ -794,8 +794,8 @@ msgid "Brief description of the build (optional)"
 msgstr "Breve descrição da produção (opcional)"
 
 #: build/models.py:266
-msgid "BuildOrder to which this build is allocated"
-msgstr "Ordem de produção para qual este serviço está alocado"
+msgid "Build Order to which this build is allocated"
+msgstr ""
 
 #: build/models.py:275
 msgid "Select part to build"
@@ -806,8 +806,8 @@ msgid "Sales Order Reference"
 msgstr "Referência do pedido de venda"
 
 #: build/models.py:285
-msgid "SalesOrder to which this build is allocated"
-msgstr "Ordem de Venda para qual esta produção está alocada"
+msgid "Sales Order to which this build is allocated"
+msgstr ""
 
 #: build/models.py:290 build/serializers.py:1087
 msgid "Source Location"
@@ -2141,7 +2141,7 @@ msgstr "Anotação"
 
 #: common/models.py:2777 stock/serializers.py:718
 msgid "Optional note field"
-msgstr ""
+msgstr "Campo opcional de notas"
 
 #: common/models.py:2804
 msgid "Barcode Scan"
@@ -5241,7 +5241,7 @@ msgid "Received Date"
 msgstr ""
 
 #: order/models.py:3025
-msgid "The date this this return item was received"
+msgid "The date this return item was received"
 msgstr ""
 
 #: order/models.py:3037
@@ -7276,7 +7276,7 @@ msgid "Integrated Slack notification methods"
 msgstr ""
 
 #: plugin/builtin/integration/core_notifications.py:131
-msgid "Slack incoming webhook url"
+msgid "Slack incoming webhook URL"
 msgstr ""
 
 #: plugin/builtin/integration/core_notifications.py:132
@@ -7536,7 +7536,7 @@ msgid "Key of plugin"
 msgstr ""
 
 #: plugin/models.py:55
-msgid "PluginName of the plugin"
+msgid "Name of the plugin"
 msgstr ""
 
 #: plugin/models.py:62 plugin/serializers.py:119
@@ -7763,7 +7763,7 @@ msgid "Installation not confirmed"
 msgstr ""
 
 #: plugin/serializers.py:152
-msgid "Either packagename of URL must be provided"
+msgid "Either packagename or URL must be provided"
 msgstr ""
 
 #: plugin/serializers.py:188

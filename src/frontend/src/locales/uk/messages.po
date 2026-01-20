@@ -8,7 +8,7 @@ msgstr ""
 "Language: uk\n"
 "Project-Id-Version: inventree\n"
 "Report-Msgid-Bugs-To: \n"
-"PO-Revision-Date: 2026-01-17 04:58\n"
+"PO-Revision-Date: 2026-01-19 20:59\n"
 "Last-Translator: \n"
 "Language-Team: Ukrainian\n"
 "Plural-Forms: nplurals=4; plural=((n%10==1 && n%100!=11) ? 0 : ((n%10 >= 2 && n%10 <=4 && (n%100 < 12 || n%100 > 14)) ? 1 : ((n%10 == 0 || (n%10 >= 5 && n%10 <=9)) || (n%100 >= 11 && n%100 <= 14)) ? 2 : 3));\n"
@@ -56,7 +56,7 @@ msgstr "Скасувати"
 
 #: lib/components/RowActions.tsx:136
 #: src/components/nav/NavigationDrawer.tsx:190
-#: src/forms/PurchaseOrderForms.tsx:854
+#: src/forms/PurchaseOrderForms.tsx:852
 #: src/forms/StockForms.tsx:796
 #: src/forms/StockForms.tsx:843
 #: src/forms/StockForms.tsx:896
@@ -103,7 +103,7 @@ msgstr "Ні"
 #: src/forms/BuildForms.tsx:639
 #: src/forms/BuildForms.tsx:802
 #: src/forms/BuildForms.tsx:905
-#: src/forms/PurchaseOrderForms.tsx:850
+#: src/forms/PurchaseOrderForms.tsx:848
 #: src/forms/ReturnOrderForms.tsx:242
 #: src/forms/SalesOrderForms.tsx:384
 #: src/forms/StockForms.tsx:360
@@ -669,8 +669,8 @@ msgstr "Введіть дані штрихкоду"
 #: src/components/barcodes/BarcodeScanDialog.tsx:56
 #: src/components/buttons/ScanButton.tsx:27
 #: src/components/nav/NavigationDrawer.tsx:122
-#: src/forms/PurchaseOrderForms.tsx:509
-#: src/forms/PurchaseOrderForms.tsx:615
+#: src/forms/PurchaseOrderForms.tsx:504
+#: src/forms/PurchaseOrderForms.tsx:610
 msgid "Scan Barcode"
 msgstr "Сканувати штрих-код"
 
@@ -755,7 +755,7 @@ msgstr "Це призведе до видалення посилання з ві
 
 #: src/components/barcodes/QRCode.tsx:205
 #: src/components/items/ActionDropdown.tsx:192
-#: src/forms/PurchaseOrderForms.tsx:606
+#: src/forms/PurchaseOrderForms.tsx:601
 msgid "Unlink Barcode"
 msgstr "Відв'язати штрих-код"
 
@@ -3043,7 +3043,7 @@ msgstr "Категорія"
 #: src/components/render/Stock.tsx:114
 #: src/components/render/Stock.tsx:132
 #: src/forms/BuildForms.tsx:804
-#: src/forms/PurchaseOrderForms.tsx:647
+#: src/forms/PurchaseOrderForms.tsx:642
 #: src/forms/StockForms.tsx:792
 #: src/forms/StockForms.tsx:839
 #: src/forms/StockForms.tsx:892
@@ -3076,7 +3076,7 @@ msgstr "Серійний номер"
 #: src/forms/BuildForms.tsx:242
 #: src/forms/BuildForms.tsx:643
 #: src/forms/BuildForms.tsx:806
-#: src/forms/PurchaseOrderForms.tsx:853
+#: src/forms/PurchaseOrderForms.tsx:851
 #: src/forms/ReturnOrderForms.tsx:243
 #: src/forms/SalesOrderForms.tsx:387
 #: src/forms/StockForms.tsx:841
@@ -4407,7 +4407,7 @@ msgstr ""
 #: src/forms/BuildForms.tsx:340
 #: src/forms/BuildForms.tsx:415
 #: src/forms/BuildForms.tsx:484
-#: src/forms/PurchaseOrderForms.tsx:769
+#: src/forms/PurchaseOrderForms.tsx:767
 #: src/forms/ReturnOrderForms.tsx:197
 #: src/forms/ReturnOrderForms.tsx:244
 #: src/forms/StockForms.tsx:712
@@ -4622,11 +4622,11 @@ msgstr ""
 #~ msgid "Assign Batch Code{0}"
 #~ msgstr "Assign Batch Code{0}"
 
-#: src/forms/PurchaseOrderForms.tsx:440
+#: src/forms/PurchaseOrderForms.tsx:435
 msgid "Assign Batch Code and Serial Numbers"
 msgstr "Призначити Номер серії збірки та Серійний номер"
 
-#: src/forms/PurchaseOrderForms.tsx:442
+#: src/forms/PurchaseOrderForms.tsx:437
 msgid "Assign Batch Code"
 msgstr "Призначити Номер серії збірки"
 
@@ -4635,27 +4635,27 @@ msgstr "Призначити Номер серії збірки"
 #~ msgid "Remove item from list"
 #~ msgstr "Remove item from list"
 
-#: src/forms/PurchaseOrderForms.tsx:462
+#: src/forms/PurchaseOrderForms.tsx:457
 msgid "Choose Location"
 msgstr "Оберіть розташування"
 
-#: src/forms/PurchaseOrderForms.tsx:470
+#: src/forms/PurchaseOrderForms.tsx:465
 msgid "Item Destination selected"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:480
+#: src/forms/PurchaseOrderForms.tsx:475
 msgid "Part category default location selected"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:490
+#: src/forms/PurchaseOrderForms.tsx:485
 msgid "Received stock location selected"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:498
+#: src/forms/PurchaseOrderForms.tsx:493
 msgid "Default location selected"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:559
+#: src/forms/PurchaseOrderForms.tsx:554
 msgid "Set Location"
 msgstr ""
 
@@ -4663,46 +4663,46 @@ msgstr ""
 #~ msgid "Serial numbers"
 #~ msgstr "Serial numbers"
 
-#: src/forms/PurchaseOrderForms.tsx:576
+#: src/forms/PurchaseOrderForms.tsx:571
 msgid "Set Expiry Date"
+msgstr ""
+
+#: src/forms/PurchaseOrderForms.tsx:579
+#: src/forms/StockForms.tsx:693
+msgid "Adjust Packaging"
 msgstr ""
 
 #: src/forms/PurchaseOrderForms.tsx:582
 #~ msgid "Store at line item destination"
 #~ msgstr "Store at line item destination"
 
-#: src/forms/PurchaseOrderForms.tsx:584
-#: src/forms/StockForms.tsx:693
-msgid "Adjust Packaging"
-msgstr ""
-
-#: src/forms/PurchaseOrderForms.tsx:592
+#: src/forms/PurchaseOrderForms.tsx:587
 #: src/forms/StockForms.tsx:684
 #: src/hooks/UseStockAdjustActions.tsx:148
 msgid "Change Status"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:598
+#: src/forms/PurchaseOrderForms.tsx:593
 msgid "Add Note"
+msgstr ""
+
+#: src/forms/PurchaseOrderForms.tsx:657
+msgid "Store at default location"
 msgstr ""
 
 #: src/forms/PurchaseOrderForms.tsx:658
 #~ msgid "Receive line items"
 #~ msgstr "Receive line items"
 
-#: src/forms/PurchaseOrderForms.tsx:662
-msgid "Store at default location"
-msgstr ""
-
-#: src/forms/PurchaseOrderForms.tsx:677
+#: src/forms/PurchaseOrderForms.tsx:672
 msgid "Store at line item destination "
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:689
+#: src/forms/PurchaseOrderForms.tsx:684
 msgid "Store with already received stock"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:713
+#: src/forms/PurchaseOrderForms.tsx:708
 #: src/pages/build/BuildDetail.tsx:341
 #: src/pages/stock/StockDetail.tsx:280
 #: src/pages/stock/StockDetail.tsx:952
@@ -4715,30 +4715,30 @@ msgstr ""
 msgid "Batch Code"
 msgstr "Номер серії збірки"
 
-#: src/forms/PurchaseOrderForms.tsx:714
+#: src/forms/PurchaseOrderForms.tsx:709
 msgid "Enter batch code for received items"
 msgstr "Введіть Номер серії збірки для отриманих елементів"
 
-#: src/forms/PurchaseOrderForms.tsx:727
+#: src/forms/PurchaseOrderForms.tsx:722
 #: src/forms/StockForms.tsx:218
 msgid "Serial Numbers"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:728
+#: src/forms/PurchaseOrderForms.tsx:723
 msgid "Enter serial numbers for received items"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:742
+#: src/forms/PurchaseOrderForms.tsx:740
 #: src/pages/stock/StockDetail.tsx:382
 #: src/tables/stock/StockItemTable.tsx:294
 msgid "Expiry Date"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:743
+#: src/forms/PurchaseOrderForms.tsx:741
 msgid "Enter an expiry date for received items"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:755
+#: src/forms/PurchaseOrderForms.tsx:753
 #: src/forms/StockForms.tsx:728
 #: src/pages/company/SupplierPartDetail.tsx:173
 #: src/pages/company/SupplierPartDetail.tsx:237
@@ -4747,19 +4747,19 @@ msgstr ""
 msgid "Packaging"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:779
+#: src/forms/PurchaseOrderForms.tsx:777
 #: src/pages/company/SupplierPartDetail.tsx:121
 #: src/tables/ColumnRenderers.tsx:332
 msgid "Note"
 msgstr "Нотатки"
 
-#: src/forms/PurchaseOrderForms.tsx:851
+#: src/forms/PurchaseOrderForms.tsx:849
 #: src/pages/company/SupplierPartDetail.tsx:139
 #: src/tables/purchasing/SupplierPriceBreakTable.tsx:49
 msgid "SKU"
 msgstr "Артикул, SKU"
 
-#: src/forms/PurchaseOrderForms.tsx:852
+#: src/forms/PurchaseOrderForms.tsx:850
 #: src/tables/part/PartPurchaseOrdersTable.tsx:127
 #: src/tables/purchasing/PurchaseOrderLineItemTable.tsx:213
 #: src/tables/purchasing/PurchaseOrderLineItemTable.tsx:283
@@ -4767,11 +4767,11 @@ msgstr "Артикул, SKU"
 msgid "Received"
 msgstr "Отримано"
 
-#: src/forms/PurchaseOrderForms.tsx:869
+#: src/forms/PurchaseOrderForms.tsx:867
 msgid "Receive Line Items"
 msgstr ""
 
-#: src/forms/PurchaseOrderForms.tsx:875
+#: src/forms/PurchaseOrderForms.tsx:873
 msgid "Items received"
 msgstr ""
 
