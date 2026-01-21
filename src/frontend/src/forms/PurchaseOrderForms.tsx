@@ -477,7 +477,7 @@ function LineItemFormRow({
       record.part_detail &&
       location === record.part_detail?.category_default_location
     ) {
-      return t`Part category default location selected`;
+      return t`Item category default location selected`;
     }
 
     // Selected location is identical to already received stock for this line
@@ -847,7 +847,7 @@ export function useReceiveLineItems(props: LineItemsForm) {
           );
         },
         headers: [
-          { title: t`Part`, style: { minWidth: '200px' } },
+          { title: t`Item`, style: { minWidth: '200px' } },
           { title: t`SKU`, style: { minWidth: '200px' } },
           { title: t`Received`, style: { minWidth: '200px' } },
           { title: t`Quantity`, style: { width: '200px' } },

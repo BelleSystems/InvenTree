@@ -381,7 +381,7 @@ export function useAllocateToSalesOrderForm({
         field_type: 'table',
         value: [],
         headers: [
-          { title: t`Part`, style: { minWidth: '200px' } },
+          { title: t`Item`, style: { minWidth: '200px' } },
           { title: t`Allocated`, style: { minWidth: '200px' } },
           { title: t`Stock Item`, style: { width: '100%' } },
           { title: t`Quantity`, style: { minWidth: '200px' } },

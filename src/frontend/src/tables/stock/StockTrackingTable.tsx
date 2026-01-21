@@ -84,7 +84,7 @@ export function StockTrackingTable({ itemId }: Readonly<{ itemId: number }>) {
           details: deltas.removed
         },
         {
-          label: t`Part`,
+          label: t`Item`,
           key: 'part',
           details:
             deltas.part_detail &&

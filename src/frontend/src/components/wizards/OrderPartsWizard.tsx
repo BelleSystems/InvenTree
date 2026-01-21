@@ -276,7 +276,7 @@ function SelectPartsStep({
       },
       {
         accessor: 'part',
-        title: t`Part`,
+        title: t`Item`,
         render: (record: PartOrderRecord) => (
           <Tooltip label={record.part?.description}>
             <Paper p='xs'>

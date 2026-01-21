@@ -357,8 +357,8 @@ export function useStockItemInstallFields({
         field_type: 'related field',
         required: true,
         exclude: true,
-        label: t`Part`,
-        description: t`Select the part to install`,
+        label: t`Item`,
+        description: t`Select the item to install`,
         model: ModelType.part,
         api_url: apiUrl(ApiEndpoints.part_list),
         onValueChange: (value) => {
@@ -788,7 +788,7 @@ function stockTransferFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`Stock` },
@@ -835,7 +835,7 @@ function stockReturnFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`Quantity` },
@@ -888,7 +888,7 @@ function stockRemoveFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -934,7 +934,7 @@ function stockAddFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -972,7 +972,7 @@ function stockCountFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -1015,7 +1015,7 @@ function stockChangeStatusFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -1059,7 +1059,7 @@ function stockMergeFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -1107,7 +1107,7 @@ function stockAssignFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },
@@ -1151,7 +1151,7 @@ function stockDeleteFields(items: any[]): ApiFormFieldSet {
         );
       },
       headers: [
-        { title: t`Part` },
+        { title: t`Item` },
         { title: t`Location` },
         { title: t`Batch` },
         { title: t`In Stock` },

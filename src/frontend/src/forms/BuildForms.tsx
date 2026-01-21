@@ -329,7 +329,7 @@ export function useCompleteBuildOutputsForm({
           );
         },
         headers: [
-          { title: t`Part` },
+          { title: t`Item` },
           { title: t`Build Output` },
           { title: t`Quantity to Complete`, style: { width: '200px' } },
           { title: t`Batch` },
@@ -404,7 +404,7 @@ export function useScrapBuildOutputsForm({
           );
         },
         headers: [
-          { title: t`Part` },
+          { title: t`Item` },
           { title: t`Build Output` },
           { title: t`Quantity to Scrap`, style: { width: '200px' } },
           { title: t`Batch` },
@@ -469,7 +469,7 @@ export function useCancelBuildOutputsForm({
           );
         },
         headers: [
-          { title: t`Part` },
+          { title: t`Item` },
           { title: t`Stock Item` },
           { title: t`Batch` },
           { title: t`Status` },
@@ -627,7 +627,7 @@ export function useAllocateStockToBuildForm({
         field_type: 'table',
         value: [],
         headers: [
-          { title: t`Part`, style: { minWidth: '175px' } },
+          { title: t`Item`, style: { minWidth: '175px' } },
           { title: t`IPN`, style: { minWidth: '50px' } },
           { title: t`Allocated`, style: { minWidth: '175px' } },
           { title: t`Stock Item`, style: { width: '100%' } },
@@ -790,7 +790,7 @@ export function useConsumeBuildItemsForm({
         field_type: 'table',
         value: [],
         headers: [
-          { title: t`Part` },
+          { title: t`Item` },
           { title: t`Stock Item` },
           { title: t`Location` },
           { title: t`Allocated` },
@@ -893,7 +893,7 @@ export function useConsumeBuildLinesForm({
         field_type: 'table',
         value: [],
         headers: [
-          { title: t`Part` },
+          { title: t`Item` },
           { title: t`Allocated` },
           { title: t`Consumed` }
         ],

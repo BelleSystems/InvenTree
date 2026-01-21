@@ -91,11 +91,33 @@ msgid "No"
 msgstr "No"
 
 #: lib/enums/ModelInformation.tsx:29
+#: src/components/wizards/OrderPartsWizard.tsx:279
+#: src/forms/BuildForms.tsx:332
+#: src/forms/BuildForms.tsx:407
+#: src/forms/BuildForms.tsx:472
+#: src/forms/BuildForms.tsx:630
+#: src/forms/BuildForms.tsx:793
+#: src/forms/BuildForms.tsx:896
+#: src/forms/PurchaseOrderForms.tsx:850
+#: src/forms/ReturnOrderForms.tsx:242
+#: src/forms/SalesOrderForms.tsx:384
+#: src/forms/StockForms.tsx:360
+#: src/forms/StockForms.tsx:791
+#: src/forms/StockForms.tsx:838
+#: src/forms/StockForms.tsx:891
+#: src/forms/StockForms.tsx:937
+#: src/forms/StockForms.tsx:975
+#: src/forms/StockForms.tsx:1018
+#: src/forms/StockForms.tsx:1062
+#: src/forms/StockForms.tsx:1110
+#: src/forms/StockForms.tsx:1154
 #: src/pages/build/BuildDetail.tsx:201
 #: src/pages/part/PartDetail.tsx:1228
 #: src/tables/ColumnRenderers.tsx:91
 #: src/tables/general/BarcodeScanTable.tsx:35
+#: src/tables/part/PartTestResultTable.tsx:247
 #: src/tables/part/RelatedPartTable.tsx:53
+#: src/tables/stock/StockTrackingTable.tsx:87
 msgid "Item"
 msgstr "Item"
 
@@ -3852,8 +3874,8 @@ msgstr "Part added to purchase order"
 #: src/forms/StockForms.tsx:1154
 #: src/tables/part/PartTestResultTable.tsx:247
 #: src/tables/stock/StockTrackingTable.tsx:87
-msgid "Part"
-msgstr "Part"
+#~ msgid "Part"
+#~ msgstr "Part"
 
 #: src/components/wizards/OrderPartsWizard.tsx:290
 #: src/tables/build/BuildAllocatedStockTable.tsx:152
@@ -4681,8 +4703,12 @@ msgid "Item Destination selected"
 msgstr "Item Destination selected"
 
 #: src/forms/PurchaseOrderForms.tsx:480
-msgid "Part category default location selected"
-msgstr "Part category default location selected"
+msgid "Item category default location selected"
+msgstr "Item category default location selected"
+
+#: src/forms/PurchaseOrderForms.tsx:480
+#~ msgid "Part category default location selected"
+#~ msgstr "Part category default location selected"
 
 #: src/forms/PurchaseOrderForms.tsx:490
 msgid "Received stock location selected"
@@ -4884,8 +4910,12 @@ msgid "Add Stock Item"
 msgstr "Add Stock Item"
 
 #: src/forms/StockForms.tsx:361
-msgid "Select the part to install"
-msgstr "Select the part to install"
+msgid "Select the item to install"
+msgstr "Select the item to install"
+
+#: src/forms/StockForms.tsx:361
+#~ msgid "Select the part to install"
+#~ msgstr "Select the part to install"
 
 #: src/forms/StockForms.tsx:487
 msgid "Confirm Stock Transfer"

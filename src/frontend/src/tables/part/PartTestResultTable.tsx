@@ -244,7 +244,7 @@ export default function PartTestResultTable({
     // Fixed columns
     const columns: TableColumn[] = [
       PartColumn({
-        title: t`Part`,
+        title: t`Item`,
         part: 'part_detail',
         full_name: true,
         ordering: 'part',
