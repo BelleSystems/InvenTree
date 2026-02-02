@@ -23,6 +23,15 @@ ENV LIBGL_ALWAYS_INDIRECT=1
 COPY contrib/container/init.sh ./
 RUN chmod +x init.sh
 
+# Yarn fix
+# Add the Yarn GPG key
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor > /usr/share/keyrings/yarn.gpg
+
+# Ensure apt uses the newly added key for the Yarn repository
+RUN echo "deb [signed-by=/usr/share/keyrings/yarn.gpg] https://dl.yarnpkg.com/debian stable main" > /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update
+
 # Install required base packages
 RUN apt update && apt install -y \
    python3.11-dev python3.11-venv \
